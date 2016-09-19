@@ -50,12 +50,8 @@ exports.parse = function (chordProStr) {
 						song[directiveName] = directiveValue;
 						break;
 					case 'section':
-						if (section.lines.length > 0) {
-							// Start a new section
-							song.addSection(section);
-							section = song.createSection();
-						}
-
+						song.addSection(section);
+						section = song.createSection();
 						section.name = directiveValue;
 						break;
 				}
